@@ -7,8 +7,18 @@ import Nav from './components/Nav';
 import Profile from './components/Profile';
 import PrivateRoute from './components/PrivateRoute';
 import history from './utils/history'
+import { useAuth0 } from './react-auth0-spa';
 
-function App() {
+const App = () => {
+  const { loading } = useAuth0();
+  if (loading) {
+    return (
+      <div>
+        Loading..
+      </div>
+
+    )
+  }
   return (
     <Router history={history}>
       <Nav />
