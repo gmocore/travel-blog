@@ -5,7 +5,6 @@ import { useAuth0 } from '../react-auth0-spa';
 
 function Nav() {
     const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
-    console.log(useAuth0())
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark border-bottom shadow">
@@ -28,10 +27,10 @@ function Nav() {
             </div>
             <div>
                 {!isAuthenticated && (
-                    <button onClick={() => loginWithRedirect({})}>Log In</button>
+                    <button className="btn btn-secondary border-light" onClick={() => loginWithRedirect({})}>Log In</button>
                 )}
 
-                {isAuthenticated && <button onClick={() => logout()}>Log out</button>}
+                {isAuthenticated && <button className="btn btn-secondary border-light" onClick={() => logout()}>Log out</button>}
             </div>
         </nav>
     )
