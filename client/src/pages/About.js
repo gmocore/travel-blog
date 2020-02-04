@@ -18,16 +18,16 @@ function About() {
                 </div>
                 <div className="social-icon-container d-flex justify-content-around">
                     <a href="#">
-                        <i className="fab fa-instagram text-light fa-2x" />
+                        <i className="fab fa-instagram text-light fa-2x shadow" />
                     </a>
                     <a href="#">
-                        <i className="fab fa-facebook-square text-light fa-2x" />
+                        <i className="fab fa-facebook-square text-light fa-2x shadow" />
                     </a>
                     <a href="#">
-                        <i className="fab fa-twitter-square text-light fa-2x" />
+                        <i className="fab fa-twitter-square text-light fa-2x shadow" />
                     </a>
                     <a href="#">
-                        <i className="fab fa-snapchat-square text-light fa-2x" />
+                        <i className="fab fa-snapchat-square text-light fa-2x shadow" />
                     </a>
                 </div>
             </div>
