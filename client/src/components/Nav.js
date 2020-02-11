@@ -6,16 +6,8 @@ import { useAuth0 } from '../react-auth0-spa';
 
 function Nav() {
     const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
-
-    // const activeClass = (e) => {
-    //     console.log(document.getElementsByTagName('a'))
-    //     const link = e.target;
-    //     if (link === e.currentTarget) {
-    //         console.log(true)
-    //         link.classList.add('active')
-    //     } 
-        
-    // }
+    const [ active, setActive ] = React.useState(false)
+    const toggle = () => setActive(!active)
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark border-bottom shadow">
@@ -26,13 +18,13 @@ function Nav() {
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <Link className="nav-link" to="/" onClick={activeClass}>Home <span className="sr-only">(current)</span></Link>
+                        <Link className={`nav-link ${active ? "active" : ""}`} to="/" onClick={toggle}>Home <span className="sr-only">(current)</span></Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/about" onClick={activeClass}>About</Link>
+                        <Link className={`nav-link ${active ? "active" : ""}`} to="/about" onClick={toggle}>About</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/blog" onClick={activeClass}>Blog</Link>
+                        <Link className={`nav-link ${active ? "active" : ""}`} to="/blog" onClick={toggle}>Blog</Link>
                     </li>
                 </ul>
             </div>
